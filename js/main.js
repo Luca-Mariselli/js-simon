@@ -15,15 +15,20 @@
 // # MILESTONE 4
 // # Sempre nella funzione temporizzata, ora dovrete confrontare i due array: i numeri estratti e quelli inseriti dall'utente. Da dove partire? Io inizierei a controllare di avere tutto quello che mi serve. Provate con console.log se avete visibilità dei due dati. Poi ragionate su come confrontare gli array e di come generare il risultato, cioè la lista dei numeri indovinati.
 
-// funzione che nasconde elementi in pagina
-function nascondi(elemento) {
-	elemento.style.display = "none";
-}
 // funzione che crea numeri random
 function numeriRandom(min, max) {
 	let numeroRandom = Math.floor(Math.random() * max + min);
 	return numeroRandom;
 }
-let random = console.log.numeriRandom(0, 100)
+
+// funzione per nascondere elementi
+function nascondi(elemento) {
+	elemento.style.display = "none";
+}
+
+let elementoDaNascondere = document.getElementById(`text`);
+
+// timer 
+setTimeout(nascondi, 3000, elementoDaNascondere);
 
 
