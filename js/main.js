@@ -26,6 +26,24 @@ function nascondi(elemento) {
 	elemento.style.display = "none";
 }
 
+// funzione per chiedere numeri e salvarli
+function askNum(numeriUtente, listaRandom) {
+	for (let i = 1; i <= 5; i++) {
+		let numeroUtente = parseInt(prompt(`Scrivi qui il numero che ricordi`));
+		if (listaRandom.includes(numeroUtente)) {
+			numeriUtente.push(numeroUtente);
+		}
+	}
+	if (numeriUtente.length > 0 && numeriUtente.length <= 5) {
+		console.log(`Hai indovinato i numeri: ${numeriUtente}`);
+		console.log(
+			`Complimenti hai indovinato ${numeriUtente.length} numeri su 5`
+		);
+	} else {
+		console.log(`Mi dispiace non hai indovinato nessun numero`);
+	}
+}
+
 // elemento da nascondere
 let elementoDaNascondere = document.getElementById(`text`);
 
