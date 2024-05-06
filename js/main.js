@@ -26,9 +26,23 @@ function nascondi(elemento) {
 	elemento.style.display = "none";
 }
 
+// elemento da nascondere
 let elementoDaNascondere = document.getElementById(`text`);
+
+// creo array per numeri utente
+let numeriGiusti = [];
+
+// creo array per numeri random
+let arrayRandom = [];
+// ciclo per creare 5 numeri random e li salvo in array e li stampo in pagina
+for (let i = 1; i <= 5; i++) {
+	let numero = numeriRandom(1, 100);
+	arrayRandom.push(numero);
+	document.getElementById(`text`).innerHTML = arrayRandom;
+}
 
 // timer 
 setTimeout(nascondi, 3000, elementoDaNascondere);
 
-
+// timer per far apparire i prompt
+setTimeout(askNum, 3100, numeriGiusti, arrayRandom);
